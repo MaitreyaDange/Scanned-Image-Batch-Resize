@@ -14,7 +14,7 @@ from tkinter.filedialog import askdirectory
 # IN_PATH = 'C:/Users/Maitreya Dange/Documents/Coding/Python Projects/Scanned Image Batch Resize/input/'
 try :
     IN_PATH = askdirectory(title = 'Select Folder')
-finally :
+except :
     IN_PATH = 'C:/Users/Maitreya Dange/Pictures/Scans'
     
 # DecompressionBombing Error Suppression :
