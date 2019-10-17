@@ -20,7 +20,7 @@ except :
 # DecompressionBombing Error Suppression :
 Image.MAX_IMAGE_PIXELS = 180000000
 # Set Parameters
-# Resize Factor < 1
+# Resize Factor < 1 
 RESIZE_FACTOR = 1/2
 # Contrast
 CONTRAST = 1.5
@@ -30,6 +30,8 @@ toaster = ToastNotifier()
 
 if not os.path.exists(IN_PATH + '/Processed') :
     os.mkdir(IN_PATH + '/Processed')
+    os.mkdir(IN_PATH + '/Processed/JPG')
+    os.mkdir(IN_PATH + '/Processed/PDF')
 
 
 def main():
@@ -44,7 +46,8 @@ def resize_image():
                 im = enh_im.enhance(CONTRAST)
                 im = im.resize((int(im.size[0]*RESIZE_FACTOR),int(im.size[1]*RESIZE_FACTOR)), Image.LANCZOS)
                 im = im.convert("RGB")
-                im.save( IN_PATH+'/processed/'+file[:len(file)-4] + ' [ processed ].jpg', 'JPEG')
+                im.save( IN_PATH+'/Processed/JPG/'+file[:len(file)-4] + ' [ processed ].pdf', 'PDF', resolution = 300)
+                im.save( IN_PATH+'/Processed/PDF/'+file[:len(file)-4] + ' [ processed ].jpg', 'JPEG')
                 pbar.set_postfix(Image = file)
             
             pbar.update(1)
