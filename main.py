@@ -21,7 +21,7 @@ except :
 Image.MAX_IMAGE_PIXELS = 180000000
 # Set Parameters
 # Resize Factor < 1 
-RESIZE_FACTOR = 1
+RESIZE_FACTOR = 1/2
 # Contrast
 CONTRAST = 1.5
 
